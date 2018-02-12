@@ -22,16 +22,17 @@ ranges: Latin-1
 To contribute to the project contact Alexei Vanyashin at 
 a (at) cyreal.org
 
-There are three source files:
-1. Federo-Regular-OTF.vbf (Original Source file with PS contours)
-2. Federo-Regular-TTF.vbf (Manually hinted TTF file)
-3. Federo-Regular.otf (Generated OTF file)
+Source Files:
+Glyphs App source file
 
 ChangeLog
 
 If you make modifications be sure to add your name (N), 
 email (E), web-address (if you have one) (W) and description (D). 
 This list is in alphabetical order.
+
+12 February 2018  (Alexei Vanyashin) Federo version 1.120
+— Added comb marks, elipsis, ∕ 
 
 9 October 2011  (Alexei Vanyashin) Federo version 1.111
 — Regenerated file through Glyphs to fix Firefox compatibility issue

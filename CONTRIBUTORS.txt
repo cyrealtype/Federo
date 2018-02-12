@@ -9,6 +9,6 @@
 # Names should be added to this file as:
 # Name <email address>
 
-Olexa Volochay <adamantem@mail.ru>
+Olexa Volochay <olexa.volochay@gmail.com>
 Alexei Vanyashin <a@cyreal.org>
 

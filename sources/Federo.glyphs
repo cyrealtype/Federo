@@ -1,7 +1,11 @@
 {
 .appVersion = "1075";
-DisplayStrings = (
-"/nonmarkingreturn  !\"#$%&'()*+,-.//0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[/backslash ]^_`abcdefghijklmnopqrstuvwxyz{|}~/noBreak \U00A1\U00A2\U00A3\U00A6\U00A7\U00A8\U00A9\U00AA\U00AC\U00AE\U00AF\U00B0\U00B1\U00B4\U00B6\U00B7\U00B8\U00BA\U00BC\U00BD\U00BE\U00BF\U00C0\U00C2\U00C3\U00C4\U00C6\U00C8\U00CA\U00CB\U00CC\U00CE\U00CF\U00D0\U00D1\U00D2\U00D4\U00D5\U00D6\U00D7\U00D8\U00D9\U00DB\U00DC\U00DE\U00DF\U00E0\U00E1\U00E2\U00E3\U00E4\U00E6\U00E8\U00E9\U00EA\U00EB\U00EE\U00EF\U00F0\U00F1\U00F2\U00F3\U00F4\U00F5\U00F6\U00F7\U00F8\U00F9\U00FA\U00FB\U00FD\U00FE/ydieresis/circumflex/ring/tilde/endash/emdash/quoteleft/quoteright/quotesinglbase/quotedblleft/quotedblright/quotedblbase/bullet/guilsinglleft/guilsinglright/fraction \U00A4\U00B2\U00B3\U00B9/minus/caron \015\U00A0\U00E5\U00C5\U00C7\U00A5/OE/oe \U00E7/foursuperior/acute.case \U00D3\U00C1\U00C9\U00CD\U00DA\U00DD\U00EC\U00ED\U00FC/idotless \U00AD\U00AB\U00BB/.notdef/euro \U00B5/dieresiscomb/gravecomb/acutecomb/circumflexcomb/caroncomb/ringcomb/tildecomb/macroncomb/cedillacomb/acutecomb.case"
+classes = (
+{
+automatic = 1;
+code = "A Aacute Acircumflex Adieresis Agrave Aring Atilde AE B C Ccedilla D Eth E Eacute Ecircumflex Edieresis Egrave F G H I Iacute Icircumflex Idieresis Igrave J K L M N Ntilde O Oacute Ocircumflex Odieresis Ograve Oslash Otilde OE P Thorn Q R S T U Uacute Ucircumflex Udieresis Ugrave V W X Y Yacute Z";
+name = Uppercase;
+}
 );
 copyright = "Copyright 2018 The Federo Project Authors (https://github.com/cyrealtype/Federo)";
 customParameters = (
@@ -70,7 +74,77 @@ code = "@_KERN_quotesingle = [quotesingle quotedbl];
 @_KERN_o_2ND = [o c d e g q egrave eacute ecircumflex edieresis eth ograve oacute ocircumflex otilde odieresis oslash ccedilla oe];
 @_KERN_u_2ND = [u ugrave uacute ucircumflex udieresis];
 @_KERN_colon_2ND = [colon semicolon];";
+disabled = 1;
 name = "FontLab OTPanel";
+},
+{
+automatic = 1;
+code = "languagesystem DFLT dflt;
+";
+name = Languagesystems;
+}
+);
+features = (
+{
+automatic = 1;
+code = "feature ccmp;
+feature sups;
+feature frac;
+feature ordn;
+feature case;
+";
+name = aalt;
+},
+{
+automatic = 1;
+code = "lookup ccmp_Other_1 {
+	@CombiningTopAccents = [acutecomb caroncomb circumflexcomb dieresiscomb gravecomb macroncomb ringcomb tildecomb];
+	@CombiningNonTopAccents = [cedillacomb];
+	sub [i]' @CombiningTopAccents by [idotless];
+	sub [i]' @CombiningNonTopAccents @CombiningTopAccents by [idotless];
+	@Markscomb = [acutecomb acute];
+	@MarkscombCase = [acutecomb.case acute.case];
+	sub @Markscomb @Markscomb' by @MarkscombCase;
+	sub @Uppercase @Markscomb' by @MarkscombCase;
+} ccmp_Other_1;
+
+lookup ccmp_Other_2 {
+	sub @Markscomb' @MarkscombCase by @MarkscombCase;
+	sub @MarkscombCase @Markscomb' by @MarkscombCase;
+} ccmp_Other_2;
+";
+name = ccmp;
+},
+{
+automatic = 1;
+code = "sub one by onesuperior;
+sub two by twosuperior;
+sub three by threesuperior;
+sub four by foursuperior;
+";
+name = sups;
+},
+{
+automatic = 1;
+code = "sub one slash four by onequarter;
+sub one slash two by onehalf;
+sub three slash four by threequarters;
+";
+name = frac;
+},
+{
+automatic = 1;
+code = "sub [zero one two three four five six seven eight nine] [A a]' by ordfeminine;
+sub [zero one two three four five six seven eight nine] [O o]' by ordmasculine;
+";
+name = ordn;
+},
+{
+automatic = 1;
+code = "sub acutecomb by acutecomb.case;
+sub acute by acute.case;
+";
+name = case;
 }
 );
 fontMaster = (
@@ -9165,15 +9239,6 @@ nodes = (
 }
 );
 width = 453;
-}
-);
-},
-{
-glyphname = NULL;
-layers = (
-{
-layerId = UUID0;
-width = 532;
 }
 );
 },
