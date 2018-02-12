@@ -34,7 +34,7 @@ email (E), web-address (if you have one) (W) and description (D).
 This list is in alphabetical order.
 
 9 October 2011  (Alexei Vanyashin) Federo version 1.111
-— Regenerated file through Glyph to fix Firefox compatibility issue
+— Regenerated file through Glyphs to fix Firefox compatibility issue
 — Updated kerning 
 
 9 October 2011  (Olexa M. Volochay, Alexei Vanyashin) Federo version 1.110 
